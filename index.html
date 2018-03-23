@@ -7,11 +7,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./scripts/firebaseConfig.js"></script>
     <script src="./scripts/chat-lib.js"></script>
+    <script src="./scripts/chat.js"></script>
 </head>
 <body>
-    <h1>Put your HTML here</h1>
-    
+  <div id="welcome_screen">
+<h1>Welcome, choose your username:</h1>
+<form id="welcome_form" onsubmit="return false;">
+<input type="text" name="username" id="username"/>
+<br />
+<input type="submit" value="Enter" onclick="ChatApp.createOrUpdateUser(document.getElementById('username').value,-1,enterChatRoom)"/>
+</form>
+</div>
+<div id='chatRoom' style="display:none;">
+<div id="Messages">
+    <ul>
+      <li>Lisa</li>
+      <li> Lavinia </li>
+
+    </ul>
+</div>
+
+  <div class="sendBox">
+ <form id="sendMessageForm">
+   <textarea rows="4" cols="50"></textarea>
+   <input type = "submit" value="Send">
+ </form>
+</div>
+<div id='activeUsers'>
+     <h1>Active Users</h1>
+     <ul>
+       <li>Lisa</li>
+       <li> Lavinia </li>
+
+     </ul>
+   </div>
+</div>
     <!-- Put your code in the chat.js file -->
-    <script src="./scripts/chat.js"></script>
+
 </body>
 </html>
